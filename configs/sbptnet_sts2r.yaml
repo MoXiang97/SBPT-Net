@@ -1,0 +1,86 @@
+# Paper-aligned SBPT-Net configuration.
+seed: 42
+
+data:
+  raw_root: data/raw
+  candidate_root: data/candidates
+  token_root: data/tokens
+  synthetic_subset: synthetic
+  real_subsets: [shoe_a, shoe_b, shoe_c]
+  train_samples: 800
+  validation_samples: 200
+  split_policy: style_holdout
+  holdout_styles: [TeBu, XBL]
+
+lcc:
+  neighbors: 256
+  threshold: 0.38169607520103455
+  chunk_size: 50000
+
+superline:
+  descriptor_neighbors: 20
+  graph_neighbors: 20
+  minimum_linearness: 0.18
+  minimum_tangent_similarity: 0.72
+  maximum_descriptor_distance: 3.2
+  maximum_spatial_factor: 8.0
+  descriptor_cost_weight: 1.0
+  tangent_cost_weight: 0.25
+  distance_cost_weight: 0.08
+  residual_cost_weight: 0.15
+  maximum_component_points: 4096
+  minimum_fragment_points: 3
+  spacing_sample_size: 8000
+
+tokenization:
+  support_radius_factor: 6.0
+  seed_stride_factor: 2.0
+  representative_perpendicular_weight: 1.0
+  representative_center_weight: 0.35
+  local_width_quantile: 0.70
+  label_positive_ratio: 0.50
+  minimum_support_points: 1
+
+model:
+  pointmlp_input_dim: 6
+  pointmlp_classes: 2
+  pointmlp_sample_points: 4096
+  structural_dim: 12
+  structural_hidden_dim: 96
+  structural_dropout: 0.10
+  fusion_beta: 0.5
+  fusion_clip_bound: 3.0
+  deviation_clip_bound: 10.0
+
+training:
+  optimizer: AdamW
+  pointmlp_learning_rate: 0.0005
+  pointmlp_weight_decay: 0.0001
+  structural_learning_rate: 0.0005
+  structural_weight_decay: 0.0002
+  maximum_epochs: 100
+  early_stopping_patience: 15
+  pointmlp_batch_size: 8
+  structural_batch_clouds: 4
+  structural_tokens_per_cloud: 256
+  pointmlp_positive_weight: 2.0
+  structural_positive_weight: 1.0
+  dice_weight: 0.5
+  structural_auxiliary_weight: 0.1
+  deviation_weight: 0.0001
+  gradient_clip: 5.0
+  checkpoint_selection_threshold: 0.5
+  descriptor_scale_low: 0.85
+  descriptor_scale_high: 1.15
+  descriptor_shift_std: 0.08
+  descriptor_noise_std: 0.04
+  attribute_scale_low: 0.75
+  attribute_scale_high: 1.25
+  attribute_shift_std: 0.20
+  attribute_noise_std: 0.06
+  attribute_drop_probability: 0.10
+
+evaluation:
+  threshold_grid: [0.05, 0.10, 0.15, 0.20, 0.25, 0.30, 0.35, 0.40, 0.45, 0.50, 0.55, 0.60, 0.65, 0.70, 0.75, 0.80, 0.85, 0.90, 0.95]
+  projection_threshold: 0.40
+  metric_space: original_point_cloud_space

@@ -1,0 +1,18 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite the associated paper and this repository."
+title: "SBPT-Net"
+type: software
+version: 0.2.0
+date-released: 2026-09-21
+authors:
+  - family-names: "Mo"
+    given-names: "Xiang"
+  - family-names: "Zheng"
+    given-names: "Song"
+  - family-names: "Guan"
+    given-names: "Yeqi"
+  - family-names: "Xu"
+    given-names: "Zhezhuang"
+  - family-names: "Huang"
+    given-names: "Ping"
+repository-code: "https://github.com/MoXiang97/SBPT-Net"

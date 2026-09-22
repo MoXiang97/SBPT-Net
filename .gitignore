@@ -1,0 +1,42 @@
+# Data, caches, experiments, and model binaries
+/data/
+datasets/
+outputs/
+runs/
+experiments/
+predictions/
+checkpoints/
+cache/
+toy_output/
+weights/*.pt
+weights/*.pth
+*.npy
+*.npz
+*.pt
+*.pth
+*.ckpt
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.venv/
+venv/
+
+# Editors and operating systems
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+
+# Local configuration, logs, and credentials
+.env
+.env.*
+configs/local*.yaml
+*.log
+*.pid
+tmp/
+.release_test/

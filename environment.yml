@@ -1,0 +1,17 @@
+name: sbptnet
+channels:
+  - pytorch
+  - nvidia
+  - conda-forge
+dependencies:
+  - python=3.10
+  - pytorch=2.1
+  - pytorch-cuda=12.1
+  - numpy>=1.24
+  - scipy>=1.10
+  - pyyaml>=6.0
+  - tqdm>=4.65
+  - pytest>=7.4
+  - pip
+  - pip:
+      - -e .
