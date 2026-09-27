@@ -1,0 +1,40 @@
+# Data and generated artifacts
+data/
+datasets/
+outputs/
+runs/
+checkpoints/
+cache/
+weights/*.pt
+weights/*.pth
+*.npy
+*.npz
+*.pt
+*.pth
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.venv/
+venv/
+
+# Editors and operating systems
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+
+# Local configuration
+configs/local*.yaml
+*.log
+*.pid
+tmp/
+.release_test/
+
+experiments/
+*.pkl
+*.ckpt
