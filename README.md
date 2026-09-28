@@ -34,6 +34,12 @@ Place the archive contents in the STS2R-code checkout:
 | `real_test_data/prototype_B/*` | `assets/Real_Data/Real_ShoeB/` |
 | `real_test_data/prototype_C/*` | `assets/Real_Data/Real_ShoeC/` |
 
+### Synthetic data used in this study
+
+The 1,000 synthetic point clouds used for model training and validation are generated as `D04_AppGeoPhys1000` and are split into 800 training samples and 200 validation samples.
+
+The `04_STS2R` subset is used to calibrate the local color contrast threshold and is not included in the 800/200 model training and validation split.
+
 From the STS2R-code checkout, generate the D04 synthetic samples and LCC candidate records:
 
 ```powershell
